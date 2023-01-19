@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: aqua;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password],input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+</style>
+</head>
+<body>
+<h3>REGISTRATION FORM</h3>
+<form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="f1" placeholder="Username"><br>
+    <input type="text" name="f2" placeholder="First Name"><br>
+    <input type="text" name="f3" placeholder="Last Name"><br>
+    <input type="email" name="f4" placeholder="E-mail"><br>
+    <input type="password" name="f5" placeholder="Password"><br>
+    <input type="password" name="f6" placeholder="Confirm Password"><br>
+    <input type="submit">
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>
